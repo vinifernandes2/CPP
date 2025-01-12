@@ -1,2 +1,1 @@
-# CPP
-Repositorio de códigos em c++
+Este repositório contém exemplos, exercícios e pequenos projetos desenvolvidos em C++.
