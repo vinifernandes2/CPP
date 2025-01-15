@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 
-// comment type one
+// comment type one.
 
 /*
 comment
