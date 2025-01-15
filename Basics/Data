@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+typedef struct {
+    int dia;
+    int mes;
+    int ano;
+} Tdata;
+
+/* Retorna 0 se data1 == data2, um número positivo se
+   data1 > data2, ou negativo se data1 < data2. */
+int compara_datas(Tdata data1, Tdata data2){
+    int delta_anos, delta_meses, delta_dias;
+  
+    delta_anos = data1.ano - data2.ano;
+    delta_meses = data1.mes - data2.mes;
+    delta_dias = data1.dia - data2.dia;
+  
+    if (delta_anos != 0)
+        return delta_anos;
+  
+    if (delta_meses != 0)
+        return delta_meses;
+  
+    return delta_dias;
+}
+
+int main(void){
+    Tdata data1, data2;
+
+    // Captura as duas datas
+    printf("Digite a primeira data (dia mes ano): ");
+    scanf("%d %d %d", &data1.dia, &data1.mes, &data1.ano);
+
+    printf("Digite a segunda data (dia mes ano): ");
+    scanf("%d %d %d", &data2.dia, &data2.mes, &data2.ano);
+
+    // Comparação das datas
+    int resultado = compara_datas(data1, data2);
+
+    // Exibe o resultado da comparação
+    if (resultado == 0) {
+        printf("As datas sao iguais.\n");
+    } else if (resultado > 0) {
+        printf("A primeira data e maior que a segunda.\n");
+    } else {
+        printf("A segunda data e maior que a primeira.\n");
+    }
+
+    return 0;
+}
